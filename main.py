@@ -86,13 +86,13 @@ class UserInterface:
         time = input()
 
         #--------
-        # modify this line of code to try out your decorator pattern.
+        # Create a new appointment for the selected pet
         appointment = Appointment(pet, time)
         #---------
 
         # add the appointment to the vet's list
-        id = self.vp.create_appointment(appointment)
-        print(f"The appointment ID is {id}")
+        appointment_id = self.vp.create_appointment(appointment)
+        print(f"The appointment ID is {appointment_id}")
  
     
     def attend_appointment(self):
@@ -119,7 +119,7 @@ class UserInterface:
             return       
         
         # enter owner's and pet's name to find a pet
-        p = self._enter_details_to_find_existing_pet()
+        pet = self._enter_details_to_find_existing_pet()
 
         m = None
         while not m:
@@ -130,9 +130,8 @@ class UserInterface:
         print("Enter dosage (amount to be given):")
         d = int(input())
         
-        id = self.vp.create_prescription(p, m, d)
-        print(f"The prescription ID is {id}")   
-
+        prescription_id = self.vp.create_prescription(pet, m, d)
+        print(f"The prescription ID is {prescription_id}")
     
     def prepare_prescription(self):
         """ Ask the user for a prescription ID and prepares the prescription for collection """
