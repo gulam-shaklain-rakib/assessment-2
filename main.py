@@ -85,13 +85,14 @@ class UserInterface:
         print("Enter appointment date and time (any string is accepted):")
         time = input()
 
-              #--------
+        #--------
         # Create a new appointment for the selected pet
         appointment = Appointment(pet, time)
         #---------
+
         # add the appointment to the vet's list
-appointment_id = self.vp.create_appointment(appointment)
-print(f"The appointment ID is {appointment_id}")
+        appointment_id = self.vp.create_appointment(appointment)
+        print(f"The appointment ID is {appointment_id}")
  
     
     def attend_appointment(self):
@@ -130,8 +131,7 @@ print(f"The appointment ID is {appointment_id}")
         d = int(input())
         
         prescription_id = self.vp.create_prescription(pet, m, d)
-print(f"The prescription ID is {prescription_id}")  
-
+        print(f"The prescription ID is {prescription_id}")
     
     def prepare_prescription(self):
         """ Ask the user for a prescription ID and prepares the prescription for collection """
